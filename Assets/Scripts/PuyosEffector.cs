@@ -29,7 +29,6 @@ namespace Assets.Scripts
                 {
                     var effect = _effectQueue.Dequeue();
                     effect(Unit.Default);
-                    Debug.Log(effect);
                 }
                 yield return new WaitForSeconds(0.25f);
             }

@@ -16,7 +16,7 @@ namespace Assets.Scripts
             var effector = Instantiate(_effector).Initialize(puyos);
 
             Observable.Return(Unit.Default)
-                .Delay(TimeSpan.FromSeconds(2))
+                .Delay(TimeSpan.FromSeconds(1f))
                 .Subscribe(_ => controller.Execute());
         }
     }

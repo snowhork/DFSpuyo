@@ -61,6 +61,12 @@ namespace Assets.Scripts
             }
         }
 
+        public Puyo Get(int x, int y)
+        {
+            if (x < 0 || x >= XSize || y < 0 || y >= YSize) return null;
+            return _puyos[x, y];
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

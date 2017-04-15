@@ -6,16 +6,18 @@ namespace Assets.Scripts
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Puyo _puyo;
-        private Puyo[,] _puyos;
+        [SerializeField] private Puyo[] _puyoPrefs;
+        [SerializeField] private PuyosEffector _effector;
+
         private void Start()
         {
-            var initializer = new PuyosInitializer(_puyo, out _puyos);
-            var vanisher = new PuyoVanisher(_puyos);
+            var puyos = new PuyosCollection(_puyoPrefs);
+            var controller = new PuyosController(puyos);
+            var effector = Instantiate(_effector).Initialize(puyos);
 
             Observable.Return(Unit.Default)
                 .Delay(TimeSpan.FromSeconds(2))
-                .Subscribe(_ => vanisher.Execute());
+                .Subscribe(_ => controller.Execute());
         }
     }
 }

@@ -8,8 +8,8 @@ namespace Assets.Scripts
     {
         private Puyo[,] _puyos;
         private Puyo[] _puyoPrefs;
-        private const int XSize = 6;
-        private const int YSize = 6;
+        public const int XSize = 6;
+        public const int YSize = 6;
 
         public PuyosCollection(Puyo[] puyoPrefs)
         {

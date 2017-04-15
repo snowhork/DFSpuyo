@@ -63,6 +63,10 @@ public class Puyo : MonoBehaviour
 
     public void Vanish()
     {
-        Destroy(this.gameObject);
+        _effectSubject.OnNext(_ =>
+        {
+            Destroy(this.gameObject);
+        });
+
     }
 }

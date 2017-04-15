@@ -21,7 +21,7 @@ namespace Assets.Scripts
             return this;
         }
 
-        IEnumerator EffectCoroutine()
+        private IEnumerator EffectCoroutine()
         {
             while (true)
             {
@@ -31,7 +31,7 @@ namespace Assets.Scripts
                     effect(Unit.Default);
                     Debug.Log(effect);
                 }
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.25f);
             }
         }
     }

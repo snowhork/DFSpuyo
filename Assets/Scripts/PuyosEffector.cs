@@ -30,7 +30,7 @@ namespace Assets.Scripts
                     var effect = _effectQueue.Dequeue();
                     effect(Unit.Default);
                 }
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }
